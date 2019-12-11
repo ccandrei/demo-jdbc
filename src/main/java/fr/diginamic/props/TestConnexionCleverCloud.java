@@ -15,6 +15,8 @@ public class TestConnexionCleverCloud {
 		String userName = connectionCloud.getString("user");
 		String passWord = connectionCloud.getString("password");
 		
+		
+		
 		try {
 			Connection maConnection = DriverManager.getConnection(url, userName, passWord);
 			System.out.println("Connexion établie");
