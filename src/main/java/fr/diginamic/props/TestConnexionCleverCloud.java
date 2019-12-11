@@ -9,21 +9,20 @@ public class TestConnexionCleverCloud {
 
 	public static void main(String[] args) {
 
-		ResourceBundle connectionCloud = ResourceBundle.getBundle("dataBaseCloud");
-		
-		String url = connectionCloud.getString("url");
-		String userName = connectionCloud.getString("user");
-		String passWord = connectionCloud.getString("password");
-		
-		
-		
 		try {
-			Connection maConnection = DriverManager.getConnection(url, userName, passWord);
-			System.out.println("Connexion établie");
-			maConnection.close();
-		} catch (SQLException e) {
+			ResourceBundle connectionCloud = ResourceBundle.getBundle("dataBaseCloud");
+			String url 	= connectionCloud.getString("url");
+			String user = connectionCloud.getString("user");
+			String password = connectionCloud.getString("password");
 
-			System.out.println("Impossible à établir une connexion");
+			DriverManager.registerDriver( new org.mariadb.jdbc.Driver());
+			Connection	connection = DriverManager.getConnection( url, user, password);
+
+			System.out.println("connection " + connection.toString());
+			connection.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }
