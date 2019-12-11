@@ -19,7 +19,7 @@ public class TestConnexionJdbc {
 			Connection connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/compta", "root", "");
 			
 			System.out.println(connection.getClass());
-			System.out.println(connection.getCatalog());
+			//System.out.println(connection.getCatalog());
 			
 			connection.close();
 		}catch (SQLException e) {
