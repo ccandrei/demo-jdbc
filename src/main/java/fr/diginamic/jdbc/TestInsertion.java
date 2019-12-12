@@ -33,7 +33,7 @@ public class TestInsertion {
 			Statement statement = connexion.createStatement();
 
 			//executer requète
-			statement.executeUpdate("INSERT INTO FOURNISSEUR (ID,NOM) VALUES (11,'La maison TEST')");
+			statement.executeUpdate("INSERT INTO FOURNISSEUR (ID,NOM) VALUES (12,'TEST 2')");
 			statement.close();
 			connexion.close();
 			connexion.commit();
@@ -43,6 +43,7 @@ public class TestInsertion {
 
 
 		}
+		
 	}
 
 }
